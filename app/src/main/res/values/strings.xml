@@ -3,4 +3,9 @@
     <string name="sign_in"><![CDATA[</SIGN IN>]]></string>
     <string name="sign_up"><![CDATA[</SIGN UP>]]></string>
     <string name="registration"><![CDATA[</REGISTRATION>]]></string>
+    <string name="add">Add</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="menu"><![CDATA[</MENU>]]></string>
 </resources>
