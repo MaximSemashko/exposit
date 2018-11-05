@@ -1,6 +1,9 @@
 package com.example.cobra.exposit;
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -44,12 +47,11 @@ public class MainActivity extends AppCompatActivity {
                         // close drawer when item is tapped
                         mDrawerLayout.closeDrawers();
 
-                        // Add code here to update the UI based on the item selected
-                        // For example, swap UI fragments here
-
+                        selectDrawerItem(menuItem);
                         return true;
                     }
                 });
+
 
         //Listen for open/close events and other state changes
         mDrawerLayout.addDrawerListener(
@@ -86,5 +88,39 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    //method to switch between fragments
+    public void selectDrawerItem(MenuItem menuItem) {
+        // Create a new fragment and specify the fragment to show based on nav item clicked
+        Fragment fragment = null;
+        Class fragmentClass;
+
+        switch(menuItem.getItemId()) {
+            case R.id.add_item:
+                fragmentClass = AddFragment.class;
+                break;
+            case R.id.home_item:
+                fragmentClass = HomeFragment.class;
+                break;
+            case R.id.profile_item:
+                fragmentClass = ProfileFragment.class;
+                break;
+            case R.id.logout_item:
+                fragmentClass=LogoutFragment.class;
+                break;
+            default:
+                fragmentClass = HomeFragment.class;
+        }
+
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Insert the fragment by replacing any existing fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
     }
 }
