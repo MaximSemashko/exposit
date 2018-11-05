@@ -1,6 +1,6 @@
 package com.example.cobra.exposit;
 
-import android.support.v4.app.FragmentTransaction;
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,15 +13,36 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
+    private FirebaseAuth mAuth;
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Check if user is signed in (not-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser == null) {
+            sendToStart();
+        }
+    }
+
+    private void sendToStart() {
+        Intent startIntent = new Intent(MainActivity.this, AuthenticationActivity.class);
+        startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(startIntent);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mAuth = FirebaseAuth.getInstance();
         mDrawerLayout = findViewById(R.id.drawer_layout);
 
         //Add toolbar to layout
@@ -86,6 +107,12 @@ public class MainActivity extends AppCompatActivity {
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 return true;
+
+                //logout from account and go to AuthenticationActivity
+            case R.id.logout_item:
+                FirebaseAuth.getInstance().signOut();
+                sendToStart();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -105,6 +132,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.profile_item:
                 fragmentClass = ProfileFragment.class;
+                FirebaseAuth.getInstance().signOut();
+                sendToStart();
                 break;
             case R.id.logout_item:
                 fragmentClass=LogoutFragment.class;
