@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                         mDrawerLayout.closeDrawers();
 
                         selectDrawerItem(menuItem);
+
                         return true;
                     }
                 });
@@ -119,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
     //method to switch between fragments
     public void selectDrawerItem(MenuItem menuItem) {
+
         // Create a new fragment and specify the fragment to show based on nav item clicked
         Fragment fragment = null;
         Class fragmentClass;
@@ -132,12 +134,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.profile_item:
                 fragmentClass = ProfileFragment.class;
-                FirebaseAuth.getInstance().signOut();
-                sendToStart();
                 break;
             case R.id.logout_item:
-                fragmentClass=LogoutFragment.class;
-                break;
+                FirebaseAuth.getInstance().signOut();
+                sendToStart();
             default:
                 fragmentClass = HomeFragment.class;
         }
