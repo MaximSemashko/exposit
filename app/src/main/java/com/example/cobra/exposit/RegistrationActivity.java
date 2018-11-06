@@ -74,14 +74,14 @@ public class RegistrationActivity extends AppCompatActivity {
 
     }
 
-    private void register_user(final String name, final String surname,final String age, final String sex, String email, String password) {
+    private void register_user(final String name, final String surname, final String age, final String sex, final String email, final String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                            //Check for root element
+                            //Check for root
                             FirebaseUser current_user=FirebaseAuth.getInstance().getCurrentUser();
                             String uid=current_user.getUid();
 
@@ -93,6 +93,8 @@ public class RegistrationActivity extends AppCompatActivity {
                             userMap.put("Surname",surname);
                             userMap.put("Age",age);
                             userMap.put("Sex",sex);
+                            userMap.put("Email",email);
+                            userMap.put("Password",password);
                             mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {

@@ -1,14 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/table_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    android:layout_marginTop="56dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="profile" />
+        android:layout_marginTop="2dp">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/ButtonColorYellow"
+            android:gravity="center"
+            android:padding="32dp"
+            android:text="@string/profile_fragment"
+            android:textColor="@color/TextColorBlack"
+            android:textSize="18sp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/ButtonColorYellow"
+            android:gravity="center"
+            android:padding="32dp"
+            android:text="@string/name"
+            android:textColor="@color/TextColorBlack" />
+
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="@color/ButtonColorYellow"
+            android:gravity="center"
+            android:padding="32dp"
+            android:textColor="@color/TextColorBlack" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/ButtonColorYellow"
+            android:gravity="center"
+            android:padding="32dp"
+            android:text="@string/surname"
+            android:textColor="@color/TextColorBlack" />
+
+        <TextView
+            android:id="@+id/surname_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="@color/ButtonColorYellow"
+            android:gravity="center"
+            android:padding="32dp"
+            android:textColor="@color/TextColorBlack" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/ButtonColorYellow"
+            android:gravity="center"
+            android:padding="32dp"
+            android:text="@string/age"
+            android:textColor="@color/TextColorBlack" />
+
+        <TextView
+            android:id="@+id/age_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="@color/ButtonColorYellow"
+            android:gravity="center"
+            android:padding="32dp"
+            android:textColor="@color/TextColorBlack" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/ButtonColorYellow"
+            android:gravity="center"
+            android:padding="32dp"
+            android:text="@string/sex"
+            android:textColor="@color/TextColorBlack" />
+
+        <TextView
+            android:id="@+id/sex_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="@color/ButtonColorYellow"
+            android:gravity="center"
+            android:padding="32dp"
+            android:textColor="@color/TextColorBlack" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/ButtonColorYellow"
+            android:gravity="center"
+            android:padding="32dp"
+            android:text="@string/email"
+            android:textColor="@color/TextColorBlack" />
+
+        <TextView
+            android:id="@+id/email_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="@color/ButtonColorYellow"
+            android:gravity="center"
+            android:padding="32dp"
+            android:textColor="@color/TextColorBlack" />
+
+    </TableRow>
+
+</TableLayout>
