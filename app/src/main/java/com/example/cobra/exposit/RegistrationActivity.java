@@ -60,15 +60,27 @@ public class RegistrationActivity extends AppCompatActivity {
                 String email=mEmail.getEditText().getText().toString();
                 String password=mPassword.getEditText().getText().toString();
 
-                if(!TextUtils.isEmpty(name)||!TextUtils.isEmpty(surname)||!TextUtils.isEmpty(age)||
-                        !TextUtils.isEmpty(sex)||!TextUtils.isEmpty(email)||!TextUtils.isEmpty(password)){
+                //Check fields
+                if(name.equals("")||surname.equals("")||age.equals("")||sex.equals("")||email.equals("")||password.equals("")){
+                    Toast.makeText(RegistrationActivity.this,"Error: Empty field/fields",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(password.length()<6){
+                    Toast.makeText(RegistrationActivity.this,"Password is too short",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+//                if(!TextUtils.isEmpty(name)||!TextUtils.isEmpty(surname)||!TextUtils.isEmpty(age)||
+//                        !TextUtils.isEmpty(sex)||!TextUtils.isEmpty(email)||!TextUtils.isEmpty(password)){
                     //method to add
                     mRegProgress.setTitle("Users registration");
                     mRegProgress.setMessage("Please wait while we make your account...");
                     mRegProgress.setCanceledOnTouchOutside(false);
                     mRegProgress.show();
                     register_user(name,surname,age,sex,email,password);
-                }
+            //    }
+//                else{
+//                    Toast.makeText(RegistrationActivity.this,"Something is empty",Toast.LENGTH_SHORT).show();
+//                }
             }
         });
 
@@ -98,7 +110,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
-                                     //Go to main page
+                                    //Go to main page
                                     if(task.isSuccessful()) {
                                         mRegProgress.dismiss();
                                         Intent mainIntent = new Intent(RegistrationActivity.this, MainActivity.class);

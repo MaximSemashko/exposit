@@ -15,4 +15,10 @@
     <string name="sex">Sex</string>
     <string name="email">Email</string>
     <string name="profile_fragment"><![CDATA[</PROFILE>]]></string>
+    <string name="sex_radio">Sex</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="password_reg">Password</string>
+    <string name="Email_reg">Email</string>
+    <string name="add_button"><![CDATA[</ADD>]]></string>
 </resources>

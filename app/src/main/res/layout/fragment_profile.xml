@@ -11,15 +11,15 @@
         android:layout_marginTop="2dp">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/ButtonColorYellow"
-            android:gravity="center"
-            android:padding="32dp"
-            android:text="@string/profile_fragment"
-            android:textColor="@color/TextColorBlack"
-            android:textSize="18sp" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/ButtonColorYellow"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="@string/profile_fragment"
+                android:textColor="@color/TextColorBlack"
+                android:textSize="18sp" android:textStyle="bold"/>
 
     </TableRow>
 
@@ -29,14 +29,14 @@
         android:layout_marginTop="2dp">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/ButtonColorYellow"
-            android:gravity="center"
-            android:padding="32dp"
-            android:text="@string/name"
-            android:textColor="@color/TextColorBlack" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/ButtonColorYellow"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="@string/name"
+                android:textColor="@color/TextColorBlack" android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/name_text"
@@ -58,14 +58,14 @@
         android:layout_marginTop="2dp">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/ButtonColorYellow"
-            android:gravity="center"
-            android:padding="32dp"
-            android:text="@string/surname"
-            android:textColor="@color/TextColorBlack" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/ButtonColorYellow"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="@string/surname"
+                android:textColor="@color/TextColorBlack" android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/surname_text"
@@ -87,14 +87,14 @@
         android:layout_marginTop="2dp">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/ButtonColorYellow"
-            android:gravity="center"
-            android:padding="32dp"
-            android:text="@string/age"
-            android:textColor="@color/TextColorBlack" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/ButtonColorYellow"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="@string/age"
+                android:textColor="@color/TextColorBlack" android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/age_text"
@@ -116,14 +116,14 @@
         android:layout_marginTop="2dp">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/ButtonColorYellow"
-            android:gravity="center"
-            android:padding="32dp"
-            android:text="@string/sex"
-            android:textColor="@color/TextColorBlack" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/ButtonColorYellow"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="@string/sex"
+                android:textColor="@color/TextColorBlack" android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/sex_text"
@@ -145,14 +145,14 @@
         android:layout_marginTop="2dp">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/ButtonColorYellow"
-            android:gravity="center"
-            android:padding="32dp"
-            android:text="@string/email"
-            android:textColor="@color/TextColorBlack" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/ButtonColorYellow"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="@string/email"
+                android:textColor="@color/TextColorBlack" android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/email_text"
