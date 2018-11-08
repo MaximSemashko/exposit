@@ -40,7 +40,7 @@ public class AddFragment extends Fragment {
        View addView = inflater.inflate(R.layout.fragment_add, container, false);
        mText=addView.findViewById(R.id.the_note);
        mAddButton=addView.findViewById(R.id.add_note_button);
-        mAddProgress=new ProgressDialog(getContext());
+       mAddProgress=new ProgressDialog(getContext());
 
         //Add notes to db
        mAddButton.setOnClickListener(new View.OnClickListener() {
@@ -69,17 +69,20 @@ public class AddFragment extends Fragment {
         String uid=current_user.getUid();
 
         //Add to Realtime db
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Notes").child(uid);
-        HashMap<String,String> notes = new HashMap<>();
+        mDatabase = FirebaseDatabase.getInstance().getReference("Notes");
+
+        //get note id
+        String noteId= mDatabase.push().getKey();
+
         //get date
         DateFormat dateFormat = new SimpleDateFormat("yyy/MM/dd");
         Date date = new Date();
         String currentDate =  dateFormat.format(date);
 
-        notes.put("Note",note);
-        notes.put("Date",currentDate);
-        notes.put("UID",uid);
-        mDatabase.push().setValue(notes).addOnCompleteListener(new OnCompleteListener<Void>() {
+        // add to db
+        Notes notes = new Notes(note,currentDate,uid);
+
+        mDatabase.child(noteId).setValue(notes).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()) {

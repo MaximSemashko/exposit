@@ -1,29 +1,32 @@
 package com.example.cobra.exposit;
 
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.*;
 
-import java.util.ArrayList;
-
 
 public class HomeFragment extends Fragment {
-
-    private RecyclerView mNotesList;
-    private DatabaseReference mMyRef;
-    private FirebaseDatabase mDatabase;
-
-    ArrayList<String> notes= new ArrayList<>();
+    private Button mAddButton;
+    private DatabaseReference mNotes;
 
     public HomeFragment() {
     }
@@ -34,38 +37,16 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View homeView = inflater.inflate(R.layout.fragment_home, container, false);
-        mNotesList=homeView.findViewById(R.id.notes_list);
+        mNotes = FirebaseDatabase.getInstance().getReference("Notes");
+        mAddButton=homeView.findViewById(R.id.home_add);
 
-        FirebaseUser current_user= FirebaseAuth.getInstance().getCurrentUser();
-        String uid=current_user.getUid();
-        mDatabase=FirebaseDatabase.getInstance();
-        mMyRef=mDatabase.getReference().child("Notes").child(uid);
-
-        mMyRef.addChildEventListener(new ChildEventListener() {
+        mAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                String note=dataSnapshot.getValue(String.class);
-                notes.add(note);
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
+            public void onClick(View view) {
+              //open home fragment
+                AddFragment addFragment =new AddFragment();
+                FragmentManager  manager = getFragmentManager();
+                manager.beginTransaction().replace(R.id.content_frame,addFragment).commit();
             }
         });
         return homeView;

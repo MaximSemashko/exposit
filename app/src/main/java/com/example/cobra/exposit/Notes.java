@@ -23,11 +23,22 @@ public class Notes {
 
     }
 
-    public Notes(String name, String date) {
-
-        this.name = name;
-        this.date = date;
-    }
 
     private String date;
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    private String userId;
+
+    public Notes(String name, String date,String userId) {
+        this.name = name;
+        this.date = date;
+        this.userId=userId;
+    }
 }

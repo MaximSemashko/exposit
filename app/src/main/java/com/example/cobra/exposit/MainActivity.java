@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -54,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
+        //Start with homefragment
+        HomeFragment homeFragment = new HomeFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.content_frame,homeFragment).commit();
+
         /*To receive callbacks when the user taps a list item in the drawer,
          implement the OnNavigationItemSelectedListener interface and attach it to your NavigationView
           by calling setNavigationItemSelectedListener()*/
@@ -66,10 +73,9 @@ public class MainActivity extends AppCompatActivity {
                         // set item as selected to persist highlight
                         menuItem.setChecked(true);
                         // close drawer when item is tapped
+
                         mDrawerLayout.closeDrawers();
-
                         selectDrawerItem(menuItem);
-
                         return true;
                     }
                 });
@@ -108,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 return true;
-
                 //logout from account and go to AuthenticationActivity
             case R.id.logout_item:
                 FirebaseAuth.getInstance().signOut();

@@ -21,4 +21,9 @@
     <string name="password_reg">Password</string>
     <string name="Email_reg">Email</string>
     <string name="add_button"><![CDATA[</ADD>]]></string>
+
+    <array name="genders">
+        <item>Male</item>
+        <item>Female</item>
+    </array>
 </resources>

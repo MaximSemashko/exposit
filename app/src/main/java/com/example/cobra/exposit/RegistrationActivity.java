@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,7 +28,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private TextInputLayout mName;
     private TextInputLayout mSurname;
     private TextInputLayout mAge;
-    private TextInputLayout mSex;
+    private Spinner mSex;
     private TextInputLayout mPassword;
     private TextInputLayout mEmail;
     private Button mSignUpButton;
@@ -56,7 +57,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 String name=mName.getEditText().getText().toString();
                 String surname=mSurname.getEditText().getText().toString();
                 String age=mAge.getEditText().getText().toString();
-                String sex=mSex.getEditText().getText().toString();
+                String sex=mSex.getSelectedItem().toString();
                 String email=mEmail.getEditText().getText().toString();
                 String password=mPassword.getEditText().getText().toString();
 
