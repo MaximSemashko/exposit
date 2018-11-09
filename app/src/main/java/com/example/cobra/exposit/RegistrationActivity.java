@@ -70,18 +70,14 @@ public class RegistrationActivity extends AppCompatActivity {
                     Toast.makeText(RegistrationActivity.this,"Password is too short",Toast.LENGTH_SHORT).show();
                     return;
                 }
-//                if(!TextUtils.isEmpty(name)||!TextUtils.isEmpty(surname)||!TextUtils.isEmpty(age)||
-//                        !TextUtils.isEmpty(sex)||!TextUtils.isEmpty(email)||!TextUtils.isEmpty(password)){
+
                     //method to add
                     mRegProgress.setTitle("Users registration");
                     mRegProgress.setMessage("Please wait while we make your account...");
                     mRegProgress.setCanceledOnTouchOutside(false);
                     mRegProgress.show();
                     register_user(name,surname,age,sex,email,password);
-            //    }
-//                else{
-//                    Toast.makeText(RegistrationActivity.this,"Something is empty",Toast.LENGTH_SHORT).show();
-//                }
+
             }
         });
 

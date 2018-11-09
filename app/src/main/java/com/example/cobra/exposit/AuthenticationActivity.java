@@ -2,6 +2,7 @@ package com.example.cobra.exposit;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.icu.text.UnicodeSetSpanner;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -42,14 +43,15 @@ public class AuthenticationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = mLoginEmail.getEditText().getText().toString();
                 String password = mLoginPassword.getEditText().getText().toString();
-                if(!TextUtils.isEmpty(email)||!TextUtils.isEmpty(password)){
+                if(email.equals("")||password.equals("")){
+                    Toast.makeText(AuthenticationActivity.this,"Fields cannot be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                     mLogDialog.setTitle("Login");
                     mLogDialog.setMessage("Wait until you log in");
                     mLogDialog.setCanceledOnTouchOutside(false);
                     mLogDialog.show();
                     loginUser(email,password);
-                }
-
             }
         });
 

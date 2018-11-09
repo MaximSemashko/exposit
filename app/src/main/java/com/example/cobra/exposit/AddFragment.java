@@ -69,7 +69,7 @@ public class AddFragment extends Fragment {
         String uid=current_user.getUid();
 
         //Add to Realtime db
-        mDatabase = FirebaseDatabase.getInstance().getReference("Notes");
+        mDatabase = FirebaseDatabase.getInstance().getReference("Notes").child(uid);
 
         //get note id
         String noteId= mDatabase.push().getKey();

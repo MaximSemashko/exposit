@@ -36,7 +36,12 @@ public class Notes {
 
     private String userId;
 
-    public Notes(String name, String date,String userId) {
+    public Notes(String name, String date) {
+        this.name = name;
+        this.date = date;
+    }
+
+    public Notes(String name, String date, String userId) {
         this.name = name;
         this.date = date;
         this.userId=userId;
