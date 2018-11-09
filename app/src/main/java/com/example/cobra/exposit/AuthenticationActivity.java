@@ -26,6 +26,7 @@ public class AuthenticationActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ProgressDialog mLogDialog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -15,5 +15,4 @@
             android:textSize="24sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/ButtonColorBlack" android:textStyle="bold"/>
-
 </LinearLayout>

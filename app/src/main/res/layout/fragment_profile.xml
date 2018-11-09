@@ -20,7 +20,6 @@
                 android:text="@string/profile_fragment"
                 android:textColor="@color/TextColorBlack"
                 android:textSize="18sp" android:textStyle="bold"/>
-
     </TableRow>
 
     <TableRow

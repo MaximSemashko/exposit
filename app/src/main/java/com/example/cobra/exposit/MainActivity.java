@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     private void sendToStart() {
         Intent startIntent = new Intent(MainActivity.this, AuthenticationActivity.class);
         startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);

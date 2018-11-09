@@ -27,7 +27,6 @@ public class ProfileFragment extends Fragment {
     private FirebaseUser mCurrentUser;
 
 
-
     public ProfileFragment() {
         // Required empty public constructor
     }

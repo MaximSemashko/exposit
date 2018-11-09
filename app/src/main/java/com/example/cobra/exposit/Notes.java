@@ -23,7 +23,6 @@ public class Notes {
 
     }
 
-
     private String date;
 
     public String getUserId() {

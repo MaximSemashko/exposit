@@ -110,6 +110,8 @@ public class HomeFragment extends Fragment {
             mView=itemView;
             note_text = itemView.findViewById(R.id.single_note_text);
             date_text = itemView.findViewById(R.id.single_date);
+
+
         }
     }
 
