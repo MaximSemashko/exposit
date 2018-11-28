@@ -29,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
         if (currentUser == null) {
             sendToStart();
         }
+        else{
+            //Start with homefragment
+            HomeFragment homeFragment = new HomeFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.content_frame,homeFragment).commit();
+
+        }
     }
 
 
@@ -55,12 +63,6 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
-
-        //Start with homefragment
-        HomeFragment homeFragment = new HomeFragment();
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.content_frame,homeFragment).commit();
 
         /*To receive callbacks when the user taps a list item in the drawer,
          implement the OnNavigationItemSelectedListener interface and attach it to your NavigationView
