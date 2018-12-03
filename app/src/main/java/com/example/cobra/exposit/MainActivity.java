@@ -1,6 +1,7 @@
 package com.example.cobra.exposit;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +15,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -42,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void sendToStart() {
         Intent startIntent = new Intent(MainActivity.this, AuthenticationActivity.class);
-        startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(startIntent);
         finish();
     }
@@ -144,8 +146,12 @@ public class MainActivity extends AppCompatActivity {
                 fragmentClass = ProfileFragment.class;
                 break;
             case R.id.logout_item:
+                //null-pointer exceptio
+                //TODO method to logout
                 FirebaseAuth.getInstance().signOut();
+                removeAllFragments(getSupportFragmentManager());
                 sendToStart();
+
             default:
                 fragmentClass = HomeFragment.class;
         }
@@ -159,5 +165,12 @@ public class MainActivity extends AppCompatActivity {
         // Insert the fragment by replacing any existing fragment
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+    }
+
+    private static void removeAllFragments(FragmentManager fragmentManager) {
+        while (fragmentManager.getBackStackEntryCount() > 0) {
+            fragmentManager.popBackStackImmediate();
+        }
+
     }
 }

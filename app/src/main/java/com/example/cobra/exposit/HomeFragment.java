@@ -80,8 +80,11 @@ public class HomeFragment extends Fragment {
 
         //get current user
         FirebaseUser current_user= FirebaseAuth.getInstance().getCurrentUser();
-        String uid=current_user.getUid();
-         mDatabaseReference = FirebaseDatabase.getInstance().getReference("Notes").child(uid);
+        if(current_user!=null) {
+            String uid = current_user.getUid();
+            mDatabaseReference = FirebaseDatabase.getInstance().getReference("Notes").child(uid);
+        }
+
 
 
 
