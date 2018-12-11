@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                 //null-pointer exceptio
                 //TODO method to logout
                 FirebaseAuth.getInstance().signOut();
-                removeAllFragments(getSupportFragmentManager());
+                //removeAllFragments(getSupportFragmentManager());
                 sendToStart();
 
             default:
