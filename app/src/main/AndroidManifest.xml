@@ -18,8 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AuthenticationActivity" />
+        <activity android:name=".AuthenticationActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".RegistrationActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"></activity>
     </application>
 
