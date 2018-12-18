@@ -60,10 +60,13 @@ public class HomeFragment extends Fragment {
                 return  notesViewHolder;
             }
         };
-
-        mNotesRecycler.setAdapter(firebaseRecyclerAdapter);
-        firebaseRecyclerAdapter.startListening();
-        firebaseRecyclerAdapter.notifyDataSetChanged();
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if(user!=null) {
+            mNotesRecycler.setAdapter(firebaseRecyclerAdapter);
+            firebaseRecyclerAdapter.startListening();
+            firebaseRecyclerAdapter.notifyDataSetChanged();
+        }
     }
 
     @Override

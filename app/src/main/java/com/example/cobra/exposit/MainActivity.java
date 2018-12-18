@@ -146,10 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 fragmentClass = ProfileFragment.class;
                 break;
             case R.id.logout_item:
-                //null-pointer exceptio
-                //TODO method to logout
                 FirebaseAuth.getInstance().signOut();
-                //removeAllFragments(getSupportFragmentManager());
                 sendToStart();
 
             default:
