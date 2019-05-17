@@ -1,4 +1,4 @@
-# exposit-task
+# Firebase Twitter =)
 Создание мобильного Android-приложения для ведения микроблога на основе сервисов Firebase (https://firebase.google.com).
 
 Используемые сервисы:
